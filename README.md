@@ -1,5 +1,5 @@
 # Projeto Individual - Módulo 3
-# Sistema de Avaliação de Candidatos
+# Sistema de Banco de Dados RESILIADATA
 
 Este é um banco de dados para armazenar informações importantes que serão utilizados pelo sistema fictício RESILIADATA.
 
