@@ -1,5 +1,4 @@
-# Projeto Individual - Módulo 3
-# Sistema de Banco de Dados RESILIADATA
+# Sistema de Banco de Dados RESILIADATA - Projeto individual Módulo 3
 
 Este é um banco de dados para armazenar informações importantes que serão utilizados pelo sistema fictício RESILIADATA.
 
