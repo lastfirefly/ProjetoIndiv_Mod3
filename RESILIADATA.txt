@@ -1,0 +1,45 @@
+-- Criação do Banco de Dados
+CREATE DATABASE RESILIADATA;
+
+-- Utilização do Banco de Dados Criado
+USE RESILIADATA;
+
+-- Criação da tabela de Áreas
+CREATE TABLE Areas (
+    AreaID INT PRIMARY KEY NOT NULL,
+    NomeArea VARCHAR(50) NOT NULL
+);
+
+-- Criação da tabela de Tecnologias
+CREATE TABLE Tecnologias (
+    TecnologiaID INT PRIMARY KEY NOT NULL,
+    NomeTecnologia VARCHAR(50) NOT NULL,
+    AreaID INT,
+    FOREIGN KEY (AreaID) REFERENCES Areas(AreaID)
+);
+
+-- Criação da tabela de Empresas
+CREATE TABLE Empresas (
+    EmpresaID INT PRIMARY KEY NOT NULL,
+    NomeEmpresa VARCHAR(100) NOT NULL,
+    Localizacao VARCHAR(100),
+    ContatoEmail VARCHAR(50)
+);
+
+-- Criação da tabela de Relacionamento entre Empresas e Tecnologias
+CREATE TABLE EmpresaTecnologia (
+    EmpresaID INT,
+    TecnologiaID INT,
+    PRIMARY KEY (EmpresaID, TecnologiaID),
+    FOREIGN KEY (EmpresaID) REFERENCES Empresas(EmpresaID),
+    FOREIGN KEY (TecnologiaID) REFERENCES Tecnologias(TecnologiaID)
+);
+
+-- Criação da tabela de Colaboradores
+CREATE TABLE Colaboradores (
+    ColaboradorID INT PRIMARY KEY NOT NULL,
+    NomeColaborador VARCHAR(100) NOT NULL,
+    Cargo VARCHAR(50),
+    EmpresaID INT,
+    FOREIGN KEY (EmpresaID) REFERENCES Empresas(EmpresaID)
+);
